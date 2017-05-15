@@ -23,7 +23,7 @@ namespace CloudSDK.Models
             set;
         }
         [JsonProperty("pressure")]
-        public int pressure
+        public double pressure
         {
             get;
             set;

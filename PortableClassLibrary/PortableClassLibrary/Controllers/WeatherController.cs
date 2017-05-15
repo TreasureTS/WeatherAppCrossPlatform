@@ -21,10 +21,12 @@ namespace PortableClassLibrary.Controllers
             {
                 Log.d(TAG,"START | getCurrentWeatherCondition");
                 //api call to get the current weather condition
-                if (AppSingleton.Instance.latitude!=0 && AppSingleton.Instance.longetude !=0)
+                OpenWeatherApi openWeaherAPI = await WeatherAdapter.getWeatherConditionInfoAsync(latitude, longitude);
+                Log.d(TAG, "Success code " + openWeaherAPI.cod);
+                if (openWeaherAPI.cod != 0)
 
                 {
-                    OpenWeatherApi openWeaherAPI = await WeatherAdapter.getWeatherConditionInfoAsync(latitude, longitude);
+                    AppSingleton.Instance.success = true;
                     AppSingleton.Instance.maximumTemperature = openWeaherAPI.main.temp_max;
                     AppSingleton.Instance.minimumTemparature = openWeaherAPI.main.temp_min;
                     AppSingleton.Instance.temperature = openWeaherAPI.main.temp;
@@ -38,6 +40,10 @@ namespace PortableClassLibrary.Controllers
                         AppSingleton.Instance.weatherDescription = i.description;
                         Log.d(TAG, "Weather ID " + i.id);
                     }
+                }
+                else
+                {
+                    AppSingleton.Instance.success = false;
                 }
                 Log.d(TAG, "END | getCurrentWeatherCondition");
 

@@ -93,11 +93,11 @@ namespace UnderTheWeatherCrossPlatform.Droid
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f070001
+			public const int btnRetry = 2131165185;
+			
 			// aapt resource value: 0x7f070003
 			public const int btnStart = 2131165187;
-			
-			// aapt resource value: 0x7f070001
-			public const int button1 = 2131165185;
 			
 			// aapt resource value: 0x7f070002
 			public const int imageView1 = 2131165186;

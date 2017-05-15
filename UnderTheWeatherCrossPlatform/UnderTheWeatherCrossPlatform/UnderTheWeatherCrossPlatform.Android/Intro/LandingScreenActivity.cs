@@ -78,8 +78,15 @@ namespace UnderTheWeatherCrossPlatform.Droid.Intro
                                         await WeatherController.setupWeatherApplication(AppSingleton.Instance.latitude, AppSingleton.Instance.longetude);
                                         await WeatherController.handleGettingImageIcon(AppSingleton.Instance.imgIcon);
                                         progressDialog.Dismiss();
+                                    if (AppSingleton.Instance.success && AppSingleton.Instance.latitude != 0 && AppSingleton.Instance.longetude != 0)
+                                    {
                                         Intent intent = new Intent(this, typeof(UnderTheWeatherActivity));
                                         StartActivity(intent);
+                                    }                                    
+                                    else
+                                    {
+                                        StartActivity(typeof(ErrorPageActivity));
+                                    }
                                 
                                 }
                                 catch (Exception ex)

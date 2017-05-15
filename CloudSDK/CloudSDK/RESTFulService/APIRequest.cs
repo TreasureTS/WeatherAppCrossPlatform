@@ -24,6 +24,7 @@ namespace CloudSDK.RESTFulService
     {
 
         private string TAG = "APIRequest";
+        private int retries = 5;
         /// <summary>
         /// Resposible for getting the weather information from the API
         /// </summary>
@@ -34,18 +35,31 @@ namespace CloudSDK.RESTFulService
             OpenWeatherApi openWeatherObj = null;
             try
             {
+                string content = string.Empty;
+                int counter = 0;
                 Log.d(TAG, "START | ");
                 //Base URI
                 string URI = Settings.htpp + Settings.BaseURI + "lat=" + latitude + "&lon=" + longitude + "&appid=" + Settings.apiKey;
                 openWeatherObj = new OpenWeatherApi();
                 //Http client
-                WebClient client = new WebClient();
-                client.Headers.Add("Authorization",Settings.apiKey);
-                client.Headers.Add("content-type", "application/json");
+                using (var client = new WebClient())
+                {
+                    client.Headers.Add("Authorization", Settings.apiKey);
+                    client.Headers.Add("content-type", "application/json");
+                    do
+                    {
+                        //Open stream and reading content from it.
+                         content = await client.DownloadStringTaskAsync(URI);
+                         Log.d(TAG, "Content " + content);
+                         JsonConvert.PopulateObject(content, openWeatherObj);
+                         Log.d(TAG, "Object populated");
+                         counter++;
+                         Log.d(TAG, "Retry " + counter);
+                         Log.d(TAG, "Cod " + openWeatherObj.cod);
 
-                //Open stream and reading content from it.
-                string content = await client.DownloadStringTaskAsync(URI);
-                JsonConvert.PopulateObject(content, openWeatherObj);
+                    }
+                    while (openWeatherObj.cod != 200 && counter  < retries);
+                }
 
                 Log.d(TAG, "END | getWeatherConditionInfo");
             }

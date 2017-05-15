@@ -66,6 +66,7 @@ namespace UnderTheWeatherCrossPlatform.Droid.Intro
             //getting the latitude and longetude
             AppSingleton.Instance.latitude = location.Latitude;
             AppSingleton.Instance.longetude = location.Longitude;
+         
             Log.d(TAG, "Latitude " + AppSingleton.Instance.latitude);
             Log.d(TAG, "Longetude " + AppSingleton.Instance.longetude);
         }

@@ -41,7 +41,7 @@ namespace PortableClassLibrary.Helpers
         //longetude
         public double longetude = 0.0;
 
-        public bool retryApp = false;
+        public bool success = false;
   
 
     }
