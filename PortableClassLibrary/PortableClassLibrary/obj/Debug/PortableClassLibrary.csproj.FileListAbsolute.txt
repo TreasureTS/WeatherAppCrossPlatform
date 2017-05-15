@@ -1,0 +1,18 @@
+c:\users\tnkonyana\documents\visual studio 2017\Projects\PortableClassLibrary\PortableClassLibrary\bin\Debug\PortableClassLibrary.dll
+c:\users\tnkonyana\documents\visual studio 2017\Projects\PortableClassLibrary\PortableClassLibrary\bin\Debug\PortableClassLibrary.pdb
+c:\users\tnkonyana\documents\visual studio 2017\Projects\PortableClassLibrary\PortableClassLibrary\bin\Debug\CloudSDK.dll
+c:\users\tnkonyana\documents\visual studio 2017\Projects\PortableClassLibrary\PortableClassLibrary\bin\Debug\Newtonsoft.Json.dll
+c:\users\tnkonyana\documents\visual studio 2017\Projects\PortableClassLibrary\PortableClassLibrary\bin\Debug\CloudSDK.pdb
+c:\users\tnkonyana\documents\visual studio 2017\Projects\PortableClassLibrary\PortableClassLibrary\bin\Debug\Newtonsoft.Json.xml
+c:\users\tnkonyana\documents\visual studio 2017\Projects\PortableClassLibrary\PortableClassLibrary\obj\Debug\PortableClassLibrary.dll
+c:\users\tnkonyana\documents\visual studio 2017\Projects\PortableClassLibrary\PortableClassLibrary\obj\Debug\PortableClassLibrary.pdb
+C:\Users\TNkonyana\Documents\Visual Studio 2017\Projects\PortableClassLibrary\PortableClassLibrary\obj\Debug\PortableClassLibrary.csprojResolveAssemblyReference.cache
+C:\GITHUB\Git\WeatherAppCrossPlatform\PortableClassLibrary\PortableClassLibrary\bin\Debug\PortableClassLibrary.dll
+C:\GITHUB\Git\WeatherAppCrossPlatform\PortableClassLibrary\PortableClassLibrary\bin\Debug\PortableClassLibrary.pdb
+C:\GITHUB\Git\WeatherAppCrossPlatform\PortableClassLibrary\PortableClassLibrary\bin\Debug\CloudSDK.dll
+C:\GITHUB\Git\WeatherAppCrossPlatform\PortableClassLibrary\PortableClassLibrary\bin\Debug\Newtonsoft.Json.dll
+C:\GITHUB\Git\WeatherAppCrossPlatform\PortableClassLibrary\PortableClassLibrary\bin\Debug\CloudSDK.pdb
+C:\GITHUB\Git\WeatherAppCrossPlatform\PortableClassLibrary\PortableClassLibrary\bin\Debug\Newtonsoft.Json.xml
+C:\GITHUB\Git\WeatherAppCrossPlatform\PortableClassLibrary\PortableClassLibrary\obj\Debug\PortableClassLibrary.csprojResolveAssemblyReference.cache
+C:\GITHUB\Git\WeatherAppCrossPlatform\PortableClassLibrary\PortableClassLibrary\obj\Debug\PortableClassLibrary.dll
+C:\GITHUB\Git\WeatherAppCrossPlatform\PortableClassLibrary\PortableClassLibrary\obj\Debug\PortableClassLibrary.pdb

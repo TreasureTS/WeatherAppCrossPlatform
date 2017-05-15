@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <style name="myTheme" parent ="@android:style/Theme.Material.Light.NoActionBar">
+    <item name="android:windowNoTitle">true</item>
+    <item name ="android:windowFullscreen">true</item>
+  </style>
+  <style name="myButton">
+    <item name="android:background">#3498DB</item>
+    <item name="android:width">100dp</item>
+  </style>
+  <style name="SplashBackground">
+    <item name="android:background">#01B0F6</item>
+  </style>
+</resources>

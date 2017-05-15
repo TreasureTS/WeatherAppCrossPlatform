@@ -1,0 +1,4 @@
+C:\Users\TNkonyana\Documents\Visual Studio 2017\Projects\UnderTheWeatherCrossPlatform\UnderTheWeatherCrossPlatform\UnderTheWeatherCrossPlatform\bin\Debug\UnderTheWeatherCrossPlatform.dll
+C:\Users\TNkonyana\Documents\Visual Studio 2017\Projects\UnderTheWeatherCrossPlatform\UnderTheWeatherCrossPlatform\UnderTheWeatherCrossPlatform\bin\Debug\UnderTheWeatherCrossPlatform.pdb
+C:\Users\TNkonyana\Documents\Visual Studio 2017\Projects\UnderTheWeatherCrossPlatform\UnderTheWeatherCrossPlatform\UnderTheWeatherCrossPlatform\obj\Debug\UnderTheWeatherCrossPlatform.dll
+C:\Users\TNkonyana\Documents\Visual Studio 2017\Projects\UnderTheWeatherCrossPlatform\UnderTheWeatherCrossPlatform\UnderTheWeatherCrossPlatform\obj\Debug\UnderTheWeatherCrossPlatform.pdb
