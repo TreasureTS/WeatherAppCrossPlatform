@@ -17,9 +17,15 @@ namespace UnderTheWeatherCrossPlatform.iOS
 
 		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
 		{
-			// Override point for customization after application launch.
-			// If not required for your application you can safely delete this method
-			return true;
+            // create a new window instance based on the screen size
+            Window = new UIWindow(UIScreen.MainScreen.Bounds);
+
+            // If you have defined a root view controller, set it here:
+            // Window.RootViewController = myViewController;
+
+            // make the window visible
+            Window.MakeKeyAndVisible();
+            return true;
 		}
 
 		public override void OnResignActivation (UIApplication application)

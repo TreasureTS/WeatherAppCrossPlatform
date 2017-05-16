@@ -135,17 +135,13 @@
     <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <ItemGroup>
+    <InterfaceDefinition Include="EmptyStoryboard1.storyboard" />
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
-    <InterfaceDefinition Include="underTheWeatherStoryBoard.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="underTheWeatherStoryBoard.cs" />
-    <Compile Include="underTheWeatherStoryBoard.designer.cs">
-      <DependentUpon>underTheWeatherStoryBoard.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewController.cs" />
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>

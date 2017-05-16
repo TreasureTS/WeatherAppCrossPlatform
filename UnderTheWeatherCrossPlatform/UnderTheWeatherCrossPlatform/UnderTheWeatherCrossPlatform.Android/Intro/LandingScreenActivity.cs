@@ -18,7 +18,7 @@ using System.Threading;
 namespace UnderTheWeatherCrossPlatform.Droid.Intro
 {
     [Activity(Label = "LandingScreenActivity", MainLauncher = true)]
-    public class LandingScreenActivity : Activity, View.IOnClickListener
+    public class LandingScreenActivity : Activity
     {
         private string TAG = "LandingScreenActivity";
         private Button btnStart;
@@ -33,7 +33,12 @@ namespace UnderTheWeatherCrossPlatform.Droid.Intro
             app = new ApplicationInternService(this);
             
             btnStart = FindViewById(Resource.Id.btnStart) as Button;
-            btnStart.SetOnClickListener(this);
+            btnStart.Click += BtnStart_Click;
+        }
+
+        private void BtnStart_Click(object sender, EventArgs e)
+        {
+            getWeatherInformationFromAPI();
         }
 
         protected override void OnResume()
@@ -43,72 +48,40 @@ namespace UnderTheWeatherCrossPlatform.Droid.Intro
             StartService(intent);
         }
 
-        public void startService()
+        public void getWeatherInformationFromAPI()
         {
-            try
-            {
-                Log.d(TAG, "START | startService");
-            }
-            catch(Exception ex)
-            {
-                Log.d(TAG, "ERR | Failed to start service " + ex.Message);
-            }
-        }
-        public void OnClick(View v)
-        {
-            try
-            {
-                switch (v.Id)
+        
+                Log.d(TAG, "START | Getting information from the api");
+                if (AppSingleton.Instance.isLocationOn == false)
                 {
-                    case Resource.Id.btnStart:
-                        if (AppSingleton.Instance.isLocationOn == false)
-                        {
-                            AppSingleton.Instance.isLocationOn = false;
-                            app.dialogMessage();
-                        }
-                        else
-                        {
-                            setProgressDialog();
-                            Task.Run(async () =>
-                            {
-                                try
-                                {                               
-                                        Log.d(TAG, "START Thread");
-                                        Process.SetThreadPriority(Android.OS.ThreadPriority.Background);
-                                        await WeatherController.setupWeatherApplication(AppSingleton.Instance.latitude, AppSingleton.Instance.longetude);
-                                        await WeatherController.handleGettingImageIcon(AppSingleton.Instance.imgIcon);
-                                        progressDialog.Dismiss();
-                                    if (AppSingleton.Instance.success && AppSingleton.Instance.latitude != 0 && AppSingleton.Instance.longetude != 0)
-                                    {
-                                        Intent intent = new Intent(this, typeof(UnderTheWeatherActivity));
-                                        StartActivity(intent);
-                                    }                                    
-                                    else
-                                    {
-                                        StartActivity(typeof(ErrorPageActivity));
-                                    }
-                                
-                                }
-                                catch (Exception ex)
-                                {
-                                    Log.d(TAG, "ERR | Failed to run thread " + ex.Message);
-                                    StartActivity(typeof(ErrorPageActivity));
-                                }
-
-
-                            }, new CancellationToken());
-
-                        }
-                        break;
+                    AppSingleton.Instance.isLocationOn = false;
+                    app.dialogMessage();
                 }
-            }
-            catch(Exception ex)
-            {
-                Log.e(TAG, "ERR | " + ex.Message);
-                StartActivity(typeof(ErrorPageActivity));
-            }
-        }
+                else
+                {
+                    setProgressDialog();
+                    Task.Run(async () =>
+                    {
+                            Log.d(TAG, "START Thread");
+                            Process.SetThreadPriority(Android.OS.ThreadPriority.Background);
+                            await WeatherController.setupWeatherApplication(AppSingleton.Instance.latitude, AppSingleton.Instance.longetude);
+                            await WeatherController.handleGettingImageIcon(AppSingleton.Instance.imgIcon);
+                            progressDialog.Dismiss();
+                            if (AppSingleton.Instance.success && AppSingleton.Instance.latitude != 0 && AppSingleton.Instance.longetude != 0)
+                            {
+                                Intent intent = new Intent(this, typeof(UnderTheWeatherActivity));
+                                StartActivity(intent);
+                            }
+                            else
+                            {
+                                StartActivity(typeof(ErrorPageActivity));
+                            }
+                       
+                    }, new CancellationToken());
 
+                }
+        }
+       
         public void setProgressDialog()
         {
             try

@@ -49,12 +49,7 @@ namespace UnderTheWeatherCrossPlatform.Droid.Intro
         {
             base.OnDestroy();
         }
-
-        protected override void OnHandleIntent(Intent intent)
-        {
-           
-        }
-
+        protected override void OnHandleIntent(Intent intent) { }
         [return: GeneratedEnum]
         public override StartCommandResult OnStartCommand(Intent intent, [GeneratedEnum] StartCommandFlags flags, int startId)
         {
@@ -63,12 +58,13 @@ namespace UnderTheWeatherCrossPlatform.Droid.Intro
 
         public void OnLocationChanged(Location location)
         {
+            float j = 0;
             //getting the latitude and longetude
             AppSingleton.Instance.latitude = location.Latitude;
             AppSingleton.Instance.longetude = location.Longitude;
-         
             Log.d(TAG, "Latitude " + AppSingleton.Instance.latitude);
             Log.d(TAG, "Longetude " + AppSingleton.Instance.longetude);
+            Log.d(TAG, "speed of coordinates " + location.Speed);    
         }
 
         public void OnProviderDisabled(string provider)
@@ -81,10 +77,7 @@ namespace UnderTheWeatherCrossPlatform.Droid.Intro
             AppSingleton.Instance.isLocationOn = true;
         }
 
-        public void OnStatusChanged(string provider, [GeneratedEnum] Availability status, Bundle extras)
-        {
-           
-        }
+        public void OnStatusChanged(string provider, [GeneratedEnum] Availability status, Bundle extras){}
 
         //Method is responsible for checking the status of a provider
         public void initializeLocationManager()
