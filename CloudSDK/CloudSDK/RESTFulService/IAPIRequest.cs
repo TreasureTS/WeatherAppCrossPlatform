@@ -23,6 +23,6 @@ namespace CloudSDK.RESTFulService
         /// <param name="latitude"></param>
         /// <param name="longitude"></param>
         Task<OpenWeatherApi> getWeatherConditionInfoAsync(double latitude, double longitude);
-        Task getImageBitMapFromURL(string uri);
+        Task<byte[]> getWeatherImage(string code);
     }
 }

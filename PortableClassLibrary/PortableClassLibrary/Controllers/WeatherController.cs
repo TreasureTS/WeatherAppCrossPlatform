@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CloudSDK.Adapter;
 using CloudSDK.Models;
+using System.Threading;
 
 namespace PortableClassLibrary.Controllers
 {
@@ -31,7 +32,6 @@ namespace PortableClassLibrary.Controllers
                     AppSingleton.Instance.minimumTemparature = openWeaherAPI.main.temp_min;
                     AppSingleton.Instance.temperature = openWeaherAPI.main.temp;
                     AppSingleton.Instance.nameOfPlace = openWeaherAPI.name;
-
                     Log.d(TAG, "Temperature " + AppSingleton.Instance.temperature);
                     //getting the image icon
                     foreach (var i in openWeaherAPI.weather)
@@ -40,6 +40,7 @@ namespace PortableClassLibrary.Controllers
                         AppSingleton.Instance.weatherDescription = i.description;
                         Log.d(TAG, "Weather ID " + i.id);
                     }
+                    AppSingleton.Instance.imageByte = await getImageBytes(AppSingleton.Instance.imgIcon);
                 }
                 else
                 {
@@ -59,23 +60,25 @@ namespace PortableClassLibrary.Controllers
         /// </summary>
         /// <param name="iconId"></param>
         /// <returns></returns>
-        public static async Task handleGettingImageIcon(string iconId, int retry = 0)
+
+        public static async  Task<byte[]> getImageBytes(string iconId)
         {
+            Byte[] imageBytes = null;
             try
             {
                 Log.d(TAG, "START | Get Image Icon");
                 if (!string.IsNullOrEmpty(iconId))
                 {
-                    await WeatherAdapter.getImageBitMapFromURL(iconId);
+                    imageBytes =  await WeatherAdapter.getWeatherImage(iconId);
                     Log.d(TAG, "END | Get Image Icon");
                 }
-               
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Log.e(TAG, "ERR | getImageICon " + ex.Message);
             }
+            return imageBytes;
         }
-       
     }
 }

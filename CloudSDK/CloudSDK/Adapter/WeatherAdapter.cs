@@ -39,18 +39,22 @@ namespace CloudSDK.Adapter
             return weatherAPi;
         }
 
-        public async static Task getImageBitMapFromURL(string imgIcon)
+        public async static Task<byte[]> getWeatherImage(string imgIcon)
         {
+            Byte[] imageBytes = null;
             try
             {
                 IAPIRequest api = new APIRequest();
-                Log.d(TAG, "START | getImageBitMapFromURL ");
-                await api.getImageBitMapFromURL(imgIcon);
+                Log.d(TAG, "START | getWeatherImage ");
+                imageBytes = await api.getWeatherImage(imgIcon);
+                Log.d(TAG, "END | getWeatherImage");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Log.e(TAG, "ERR | getImageBitMapFromURL " + ex.Message);
             }
+
+            return imageBytes;
         }
 
 

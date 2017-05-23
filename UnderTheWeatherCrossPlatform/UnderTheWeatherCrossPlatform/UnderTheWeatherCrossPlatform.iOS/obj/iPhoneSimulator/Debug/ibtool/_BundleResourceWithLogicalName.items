@@ -1,18 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool-link\EmptyStoryboard1.storyboardc\5-view-6.nib">
-      <LogicalName>EmptyStoryboard1.storyboardc/5-view-6.nib</LogicalName>
-      <Optimize>false</Optimize>
-    </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool-link\EmptyStoryboard1.storyboardc\Info.plist">
-      <LogicalName>EmptyStoryboard1.storyboardc/Info.plist</LogicalName>
-      <Optimize>false</Optimize>
-    </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool-link\EmptyStoryboard1.storyboardc\UIViewController-5.nib">
-      <LogicalName>EmptyStoryboard1.storyboardc/UIViewController-5.nib</LogicalName>
-      <Optimize>false</Optimize>
-    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool-link\LaunchScreen.storyboardc\Info.plist">
       <LogicalName>LaunchScreen.storyboardc/Info.plist</LogicalName>
       <Optimize>false</Optimize>
@@ -35,6 +23,26 @@
     </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool-link\Main.storyboardc\UIViewController-BYZ-38-t0r.nib">
       <LogicalName>Main.storyboardc/UIViewController-BYZ-38-t0r.nib</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool-link\weatherApp.storyboardc\111-view-112.nib">
+      <LogicalName>weatherApp.storyboardc/111-view-112.nib</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool-link\weatherApp.storyboardc\416-view-417.nib">
+      <LogicalName>weatherApp.storyboardc/416-view-417.nib</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool-link\weatherApp.storyboardc\Info.plist">
+      <LogicalName>weatherApp.storyboardc/Info.plist</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool-link\weatherApp.storyboardc\UINavigationController-12.nib">
+      <LogicalName>weatherApp.storyboardc/UINavigationController-12.nib</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool-link\weatherApp.storyboardc\weatherViewController.nib">
+      <LogicalName>weatherApp.storyboardc/weatherViewController.nib</LogicalName>
       <Optimize>false</Optimize>
     </_BundleResourceWithLogicalName>
   </ItemGroup>

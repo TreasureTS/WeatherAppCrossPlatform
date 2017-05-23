@@ -63,15 +63,13 @@
     <MtouchDebug>true</MtouchDebug>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PortableClassLibrary">
+      <HintPath>..\..\..\PortableClassLibrary\PortableClassLibrary\bin\Debug\PortableClassLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\UnderTheWeatherCrossPlatform\UnderTheWeatherCrossPlatform.csproj">
-      <Name>UnderTheWeatherCrossPlatform</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json">
@@ -135,17 +133,30 @@
     <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="EmptyStoryboard1.storyboard" />
-    <None Include="Info.plist" />
+    <None Include="Info.plist">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Entitlements.plist" />
+    <InterfaceDefinition Include="weatherApp.storyboard">
+      <SubType>Designer</SubType>
+    </InterfaceDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper\LocationUpdateEventArgs.cs" />
+    <Compile Include="Controller\LandingScreenController.cs" />
+    <Compile Include="Controller\LandingScreenController.designer.cs">
+      <DependentUpon>LandingScreenController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocationManager\LocationManager.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs">
-      <DependentUpon>ViewController.cs</DependentUpon>
+    <Compile Include="Controller\weatherViewController.cs" />
+    <Compile Include="Controller\weatherViewController.designer.cs">
+      <DependentUpon>weatherViewController.cs</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="splashBackground.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

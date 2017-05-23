@@ -76,28 +76,24 @@ namespace CloudSDK.RESTFulService
         /// </summary>
         /// <param name="iconCode"></param>
         /// <returns></returns>
-        async Task IAPIRequest.getImageBitMapFromURL(string iconCode)
+        public async Task<byte[]> getWeatherImage(string code)
         {
+            Byte[] imageBytes = null;
             try
             {
-                Log.d(TAG, "START | getImageBitMapFromURL");
-                string URI = Settings.htpp + Settings.bitMapImageURI + iconCode + ".png";
+                Log.d(TAG, "START | getWeatherImage");
+                string URI = Settings.htpp + Settings.bitMapImageURI + code + ".png";
                 Log.d(TAG, "Image URI " + URI);
                 WebClient client = new WebClient();
-                Log.d(TAG, "URI " + URI);
-                var imageBytes = await client.DownloadDataTaskAsync(URI);
-                if (imageBytes !=null && imageBytes.Length > 0)
-                {
-                    AppState.Instance.bitMapImage = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
-                }
-               
+                imageBytes = await client.DownloadDataTaskAsync(URI);
+                Log.d(TAG, "DONE ");
             }
             catch (Exception ex)
             {
                 Log.e(TAG, "Failed to get image because : " + ex.Message);
             }
-        }
 
-       
+            return imageBytes;
+        }
     }
 }

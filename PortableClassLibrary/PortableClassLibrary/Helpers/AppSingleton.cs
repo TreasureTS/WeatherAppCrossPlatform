@@ -42,6 +42,8 @@ namespace PortableClassLibrary.Helpers
         public double longetude = 0.0;
 
         public bool success = false;
+
+        public byte[] imageByte = null;
   
 
     }

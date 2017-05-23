@@ -20,9 +20,13 @@ namespace UnderTheWeatherCrossPlatform.iOS
             // create a new window instance based on the screen size
             Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
-            // If you have defined a root view controller, set it here:
-            // Window.RootViewController = myViewController;
+            string storyboardName = "weatherApp";
+            UIStoryboard storyboard = UIStoryboard.FromName(storyboardName, null);
+            // if it is the first viewcontroller
+            UIViewController vc = storyboard.InstantiateInitialViewController();
 
+            // If you have defined a root view controller, set it here:
+            Window.RootViewController = vc;
             // make the window visible
             Window.MakeKeyAndVisible();
             return true;

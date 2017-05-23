@@ -12,6 +12,7 @@ using Android.Widget;
 using UnderTheWeatherCrossPlatform.Droid.Intro;
 using PortableClassLibrary.Helpers;
 using CloudSDK.Models;
+using Android.Graphics;
 
 namespace UnderTheWeatherCrossPlatform.Droid.UnderTheWeatherActivities
 {
@@ -28,7 +29,7 @@ namespace UnderTheWeatherCrossPlatform.Droid.UnderTheWeatherActivities
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.underTheWeatherLayout);
-
+            Bitmap bitMapImage = BitmapFactory.DecodeByteArray(AppSingleton.Instance.imageByte, 0, AppSingleton.Instance.imageByte.Length);
             txtDescription = FindViewById(Resource.Id.txtDescription) as TextView;
             txtPlaceOfResidence = FindViewById(Resource.Id.txtPlaceOfResidence) as TextView;
             imgIcon = FindViewById(Resource.Id.imgIcon) as ImageView;
@@ -38,7 +39,7 @@ namespace UnderTheWeatherCrossPlatform.Droid.UnderTheWeatherActivities
 
 
             txtDescription.Text = AppSingleton.Instance.weatherDescription.ToString();
-            imgIcon.SetImageBitmap(AppState.Instance.bitMapImage);
+            imgIcon.SetImageBitmap(bitMapImage);
             txtPlaceOfResidence.Text = AppSingleton.Instance.nameOfPlace + " " + DateTime.Now.ToString("dd , yyyy");
             txtTemp.Text = TemperatureConverter.convertToCelcius(AppSingleton.Instance.temperature).ToString() + "°";
             txtMax.Text =" max " + TemperatureConverter.convertToCelcius(AppSingleton.Instance.maximumTemperature).ToString() + "°";

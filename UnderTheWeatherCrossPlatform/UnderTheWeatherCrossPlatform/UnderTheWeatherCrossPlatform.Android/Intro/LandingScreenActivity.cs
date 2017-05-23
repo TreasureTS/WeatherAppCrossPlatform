@@ -59,27 +59,26 @@ namespace UnderTheWeatherCrossPlatform.Droid.Intro
                 }
                 else
                 {
+                   
+                    Log.d(TAG, "START Thread");
                     setProgressDialog();
                     Task.Run(async () =>
                     {
-                            Log.d(TAG, "START Thread");
-                            Process.SetThreadPriority(Android.OS.ThreadPriority.Background);
-                            await WeatherController.setupWeatherApplication(AppSingleton.Instance.latitude, AppSingleton.Instance.longetude);
-                            await WeatherController.handleGettingImageIcon(AppSingleton.Instance.imgIcon);
-                            progressDialog.Dismiss();
-                            if (AppSingleton.Instance.success && AppSingleton.Instance.latitude != 0 && AppSingleton.Instance.longetude != 0)
-                            {
-                                Intent intent = new Intent(this, typeof(UnderTheWeatherActivity));
-                                StartActivity(intent);
-                            }
-                            else
-                            {
-                                StartActivity(typeof(ErrorPageActivity));
-                            }
-                       
-                    }, new CancellationToken());
-
-                }
+                        Process.SetThreadPriority(Android.OS.ThreadPriority.Background);
+                        await WeatherController.setupWeatherApplication(AppSingleton.Instance.latitude, AppSingleton.Instance.longetude);
+                        progressDialog.Dismiss();
+                        if (AppSingleton.Instance.success && AppSingleton.Instance.latitude != 0 && AppSingleton.Instance.longetude != 0)
+                        {
+                            Intent intent = new Intent(this, typeof(UnderTheWeatherActivity));
+                            StartActivity(intent);
+                        }
+                        else
+                        {
+                            StartActivity(typeof(ErrorPageActivity));
+                        }
+                    },  new CancellationToken());
+                   
+            }
         }
        
         public void setProgressDialog()

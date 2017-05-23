@@ -11,18 +11,18 @@ using UIKit;
 
 namespace UnderTheWeatherCrossPlatform.iOS
 {
-    [Register ("ViewController")]
-    partial class ViewController
+    [Register ("LandingScreenController")]
+    partial class LandingScreenController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton Button { get; set; }
+        UIKit.UIButton btnStart { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (Button != null) {
-                Button.Dispose ();
-                Button = null;
+            if (btnStart != null) {
+                btnStart.Dispose ();
+                btnStart = null;
             }
         }
     }
